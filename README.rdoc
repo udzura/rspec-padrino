@@ -1,6 +1,49 @@
 = rspec-padrino
 
-Description goes here.
+rspec-padrino is a gem including helpers for testing a Padrino app using RSpec. Taking much from rspec-rails.
+
+== Install
+
+    gem install rspec-padrino
+
+Depends on padrino-core >= 0.10.2, sinatra, rack-test, and RSpec 2.
+
+== Usage
+
+Create a Padrino project with option <tt>-t rspec</tt>. Required files will be generated.
+
+Then edit <tt>spec_helper.rb</tt> like:
+
+    RSpec.configure do |conf|
+      conf.include Rack::Test::Methods
+      conf.include RSpec::Padrino # add this
+    end
+    
+    def app
+      ##
+      # You should point toplevel #app method to:
+      Padrino.application
+    end
+
+more usage on RDoc: [http://rubydoc.info/github/udzura/rspec-padrino/v0.0.1/frames]
+
+== Related Sites
+
+=== rubygems.org
+
+* [https://rubygems.org/gems/rspec-padrino]
+
+=== github
+
+* [https://github.com/udzura/rspec-padrino]
+
+=== travis-ci
+
+* [http://travis-ci.org/udzura/rspec-padrino]
+
+=== author's blog
+
+* [http://blog.udzura.jp]
 
 == Contributing to rspec-padrino
  
@@ -14,6 +57,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Uchio Kondo. See LICENSE.txt for
+Copyright (c) 2011 Uchio Kondo <udzura@udzura.jp>. See LICENSE.txt for
 further details.
 
