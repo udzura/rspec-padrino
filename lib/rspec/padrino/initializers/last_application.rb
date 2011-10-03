@@ -4,7 +4,6 @@ require 'rack/test'
 last_app = nil
 
 Sinatra::Base.class_eval do
-  attr_reader :last_app
   undef :call
   define_method :call do |env|
     _dup = dup

@@ -32,6 +32,11 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.rspec_opts = "-fs --color"
 end
 
+RSpec::Core::RakeTask.new(:"spec:integrations") do |spec|
+  spec.pattern = FileList['spec/integrations/**/*_spec.rb']
+  spec.rspec_opts = "-fs --color"
+end
+
 RSpec::Core::RakeTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
   spec.rcov = true
