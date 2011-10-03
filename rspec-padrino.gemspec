@@ -5,9 +5,9 @@
 
 Gem::Specification.new do |s|
   s.name = "rspec-padrino"
-  s.version = "0.0.1.pre1"
+  s.version = "0.0.1"
 
-  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Uchio Kondo"]
   s.date = "2011-10-03"
   s.description = "rspec-padrino is a gem including helpers for testing a Padrino app using RSpec. Taking much from rspec-rails."
@@ -32,7 +32,12 @@ Gem::Specification.new do |s|
     "lib/rspec/padrino/matchers.rb",
     "lib/rspec/padrino/matchers/routing_matchers.rb",
     "lib/rspec/padrino/methods.rb",
+    "rspec-padrino.gemspec",
+    "spec/integrations/last_application_spec.rb",
+    "spec/integrations/matchers_spec.rb",
+    "spec/integrations/mock_app_helper.rb",
     "spec/rspec-padrino_spec.rb",
+    "spec/spec.opts",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/udzura/rspec-padrino"
@@ -46,7 +51,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
-      s.add_runtime_dependency(%q<padrino-core>, [">= 0.10.0"])
+      s.add_runtime_dependency(%q<padrino-core>, [">= 0.10.2"])
       s.add_runtime_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_runtime_dependency(%q<rack-test>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -54,7 +59,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rcov>, [">= 0"])
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
-      s.add_dependency(%q<padrino-core>, [">= 0.10.0"])
+      s.add_dependency(%q<padrino-core>, [">= 0.10.2"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<rack-test>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -63,7 +68,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
-    s.add_dependency(%q<padrino-core>, [">= 0.10.0"])
+    s.add_dependency(%q<padrino-core>, [">= 0.10.2"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<rack-test>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
