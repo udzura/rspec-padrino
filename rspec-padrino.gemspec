@@ -52,7 +52,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
       s.add_runtime_dependency(%q<padrino-core>, [">= 0.10.2"])
-      s.add_runtime_dependency(%q<rspec>, ["~> 2.3.0"])
+      s.add_runtime_dependency(%q<rspec>, ["~> 2.3"])
       s.add_runtime_dependency(%q<rack-test>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -60,7 +60,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<padrino-core>, [">= 0.10.2"])
-      s.add_dependency(%q<rspec>, ["~> 2.3.0"])
+      s.add_dependency(%q<rspec>, ["~> 2.3"])
       s.add_dependency(%q<rack-test>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -69,7 +69,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<padrino-core>, [">= 0.10.2"])
-    s.add_dependency(%q<rspec>, ["~> 2.3.0"])
+    s.add_dependency(%q<rspec>, ["~> 2.3"])
     s.add_dependency(%q<rack-test>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])

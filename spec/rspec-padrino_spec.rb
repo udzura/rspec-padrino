@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe Rspec::Padrino do
+describe RSpec::Padrino do
   it "can be included" do
-    lambda { include Rspec::Padrino }.should_not raise_error
+    lambda { include RSpec::Padrino }.should_not raise_error
   end
   
   it "includes RSpec::Padrino::* automatically" do
