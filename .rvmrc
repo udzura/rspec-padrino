@@ -1,1 +1,1 @@
-rvm 1.9.2@padrino-rspec
+rvm use 1.9.2@padrino-rspec
