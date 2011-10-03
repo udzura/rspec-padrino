@@ -39,7 +39,7 @@ more usage on RDoc: [http://rubydoc.info/github/udzura/rspec-padrino/v0.0.1/fram
 
 === travis-ci
 
-* [http://travis-ci.org/udzura/rspec-padrino]
+* [http://travis-ci.org/udzura/rspec-padrino] <img src="https://secure.travis-ci.org/udzura/rspec-padrino.png" alt="build status" />
 
 === author's blog
 
