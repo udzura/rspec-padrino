@@ -4,7 +4,7 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 gem "sinatra"
 gem "padrino-core", ">= 0.10.2"
-gem "rspec", "~> 2.3"
+gem "rspec", ">= 2.3"
 gem "rack-test", ">= 0"
 
 # Add dependencies to develop your gem here.

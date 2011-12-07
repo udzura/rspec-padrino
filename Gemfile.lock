@@ -56,5 +56,5 @@ DEPENDENCIES
   rack-test
   rcov
   rdoc
-  rspec (~> 2.3)
+  rspec (>= 2.3)
   sinatra
