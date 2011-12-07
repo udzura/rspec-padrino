@@ -7,6 +7,10 @@ describe "Integrations" do
       {:get => "/foo"}.should route_to(:foo, :index)
     end
 
+    it "should not route to /bar" do
+      {:get => "/bar"}.should_not route_to(:bar, :index)
+    end
+
     it "routes to /foo/create" do
       {:post => "/foo/create"}.should route_to(:foo, :create)
     end
@@ -15,8 +19,16 @@ describe "Integrations" do
       {:get => "/foo/assign"}.should route_to(:foo, :assign)
     end
 
-    it "routes to /foo/assign?hoge=1234" do
-      {:get => "/foo/assign?hoge=1234"}.should route_to(:foo, :assign, :hoge => "1234")
+    it "routes to /foo/show/1" do
+      {:get => "/foo/show/1"}.should route_to(:foo, :show, :id => "1")
+    end
+
+    it "routes to /custom/123/path" do
+      {:get => "/custom/123/path"}.should route_to(:foo, :show2, :id => "123")
+    end
+
+    it "routes to /foo/assign?par=ams" do
+      {:get => "/foo/assign?par=ams"}.should route_to(:foo, :assign, :par => "ams")
     end
 
     it "is not routeble on /" do
@@ -25,6 +37,18 @@ describe "Integrations" do
 
     it "is routable on /foo" do
       {:get => "/foo"}.should be_routable
+    end
+
+    it "is routable on /foo/show/1" do
+      {:get => "/foo/show/1"}.should be_routable
+    end
+
+    it "is routable on /custom/123/path" do
+      {:get => "/custom/123/path"}.should be_routable
+    end
+
+    it "is routable on /foo?par=ams" do
+      {:get => "/foo?par=ams"}.should be_routable
     end
 
     it "is routable on /foo/create with method POST" do
