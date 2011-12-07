@@ -1,13 +1,20 @@
 require 'sinatra/base'
 require 'padrino-core'
+
 module RSpec::Padrino::Matchers
   module RoutingMatchers
     last_params = nil
     last_name = nil
-    Padrino::Application.class_eval do
-      before do
-        last_params = params
-        last_name = request.route_obj.named rescue nil
+
+    Padrino.after_load do
+      apps = Padrino.mounted_apps.map(&:app_obj)
+      apps.each do |the_app|
+        the_app.class_eval do
+          after do
+            last_params = params
+            last_name = request.route_obj.named
+          end
+        end
       end
     end
 
@@ -54,6 +61,7 @@ module RSpec::Padrino::Matchers
         method = verb_to_path_map.keys.first.to_s.upcase
         @routed_to = Padrino.mounted_apps.map(&:app_obj).
           map{|a| a.router.recognize(Rack::MockRequest.env_for(path, :method => method))}.first
+        @routed_to
       end
 
       failure_message_for_should_not do |path|

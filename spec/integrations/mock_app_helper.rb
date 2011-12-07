@@ -12,6 +12,14 @@ class TestApp < Padrino::Application
       "foo"
     end
     
+    get :show, :with => :id do
+      "foo"
+    end
+    
+    get :show2, '/custom/:id/path' do
+      "foo"
+    end
+
     post :create do
       "foo"
     end
