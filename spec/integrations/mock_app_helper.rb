@@ -34,8 +34,10 @@ end
 Padrino.mount("TestApp").to('/')
 Padrino.load!
 
-include Rack::Test::Methods
-include RSpec::Padrino
+RSpec.configure do |c|
+  c.include Rack::Test::Methods
+  c.include RSpec::Padrino
+end
 
 def app
   Padrino.application

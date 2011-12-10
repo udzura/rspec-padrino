@@ -6,16 +6,20 @@ module RSpec::Padrino::Matchers
     last_params = nil
     last_name = nil
 
-    Padrino.after_load do
+    @_routing_matchers_hook = lambda do
       apps = Padrino.mounted_apps.map(&:app_obj)
       apps.each do |the_app|
         the_app.class_eval do
           after do
             last_params = params
-            last_name = request.route_obj.named
+            last_name = request.route_obj && request.route_obj.named
           end
         end
       end
+    end
+    
+    def self.hook!
+      @_routing_matchers_hook.call
     end
 
     extend RSpec::Matchers::DSL
@@ -31,8 +35,9 @@ module RSpec::Padrino::Matchers
         query = Rack::Utils::parse_query(query)
         method = verb_to_path_map.keys.first
         begin
-          Padrino.application.call(Rack::MockRequest.env_for(verb_to_path_map.values.first, :method => method.to_s.upcase))
+          ret = Padrino.application.call(Rack::MockRequest.env_for(verb_to_path_map.values.first, :method => method.to_s.upcase))
         rescue
+          puts "something wrong"
         end
         last_name == expected_names.join("_").to_sym &&
           last_params.symbolize_keys == expected_params.symbolize_keys
