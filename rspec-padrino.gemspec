@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "rspec-padrino"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Uchio Kondo"]
-  s.date = "2011-12-07"
+  s.date = "2011-12-10"
   s.description = "rspec-padrino is a gem including helpers for testing a Padrino app using RSpec. Taking much from rspec-rails."
   s.email = "udzura@udzura.jp"
   s.extra_rdoc_files = [
