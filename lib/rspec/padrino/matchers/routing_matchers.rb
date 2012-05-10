@@ -9,7 +9,7 @@ module RSpec::Padrino::Matchers
     @_routing_matchers_hook = lambda do
       apps = Padrino.mounted_apps.map(&:app_obj)
       apps.each do |the_app|
-        the_app.class_eval do
+        the_app.instance_eval do
           after do
             last_params = params
             last_name = request.route_obj && request.route_obj.named
