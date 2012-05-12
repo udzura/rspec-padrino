@@ -4,7 +4,7 @@ describe RSpec::Padrino do
   it "can be included" do
     lambda { include RSpec::Padrino }.should_not raise_error
   end
-  
+
   it "includes RSpec::Padrino::* automatically" do
     module Foo
       include RSpec::Padrino

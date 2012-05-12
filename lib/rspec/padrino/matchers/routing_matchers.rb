@@ -9,6 +9,7 @@ module RSpec::Padrino::Matchers
     @_routing_matchers_hook = lambda do
       apps = Padrino.mounted_apps.map(&:app_obj)
       apps.each do |the_app|
+        next if the_app.filters[:after].find{|filter| filter.source_location[0] =~ /#{__FILE__}/ }
         the_app.class_eval do
           after do
             last_params = params
@@ -17,7 +18,7 @@ module RSpec::Padrino::Matchers
         end
       end
     end
-    
+
     def self.hook!
       @_routing_matchers_hook.call
     end

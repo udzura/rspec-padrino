@@ -10,7 +10,7 @@ Sinatra::Base.class_eval do
     last_app = _dup
     _dup.call!(env)
   end
-  
+
   def assigns(sym)
     valname = (RUBY_VERSION > '1.9') ? :"@#{sym}" : "@#{sym}"
     instance_variables.include?(valname) ? instance_variable_get(valname) : nil

@@ -11,11 +11,11 @@ class TestApp < Padrino::Application
     get :index do
       "foo"
     end
-    
+
     get :show, :with => :id do
       "foo"
     end
-    
+
     get :show2, '/custom/:id/path' do
       "foo"
     end

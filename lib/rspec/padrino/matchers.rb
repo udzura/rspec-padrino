@@ -4,7 +4,7 @@ module RSpec::Padrino
     def self.included(base)
       base.send :include, RSpec::Padrino::Matchers::RoutingMatchers
       RSpec.configure do |c|
-        c.before {
+        c.before(:all) {
           RSpec::Padrino::Matchers::RoutingMatchers.hook!
         }
       end
