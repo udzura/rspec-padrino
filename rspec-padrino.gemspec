@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "rspec-padrino"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Uchio Kondo"]
-  s.date = "2011-12-10"
+  s.date = "2012-05-12"
   s.description = "rspec-padrino is a gem including helpers for testing a Padrino app using RSpec. Taking much from rspec-rails."
   s.email = "udzura@udzura.jp"
   s.extra_rdoc_files = [
@@ -37,13 +37,14 @@ Gem::Specification.new do |s|
     "spec/integrations/matchers_spec.rb",
     "spec/integrations/mock_app_helper.rb",
     "spec/rspec-padrino_spec.rb",
+    "spec/rspec/padrino/matchers_spec.rb",
     "spec/spec.opts",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/udzura/rspec-padrino"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.19"
   s.summary = "rspec-padrino is a gem including helpers for testing a Padrino app."
 
   if s.respond_to? :specification_version then
@@ -52,38 +53,37 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
       s.add_runtime_dependency(%q<padrino-core>, [">= 0.10.2"])
-      s.add_runtime_dependency(%q<rspec>, [">= 2.3"])
+      s.add_runtime_dependency(%q<rspec>, [">= 2.0"])
       s.add_runtime_dependency(%q<rack-test>, [">= 0"])
+      s.add_runtime_dependency(%q<pry>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
-      s.add_development_dependency(%q<bundler>)
+      s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
-      if RUBY_VERSION < '1.9'
-        s.add_runtime_dependency(%q<pry>)
-      else
-        s.add_development_dependency(%q<pry>)
-      end
+      s.add_development_dependency(%q<pry>, [">= 0"])
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<padrino-core>, [">= 0.10.2"])
-      s.add_dependency(%q<rspec>, [">= 2.3"])
+      s.add_dependency(%q<rspec>, [">= 2.0"])
       s.add_dependency(%q<rack-test>, [">= 0"])
+      s.add_dependency(%q<pry>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
-      s.add_dependency(%q<bundler>)
+      s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<simplecov>, [">= 0"])
-      s.add_dependency(%q<pry>)
+      s.add_dependency(%q<pry>, [">= 0"])
     end
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<padrino-core>, [">= 0.10.2"])
-    s.add_dependency(%q<rspec>, [">= 2.3"])
+    s.add_dependency(%q<rspec>, [">= 2.0"])
     s.add_dependency(%q<rack-test>, [">= 0"])
+    s.add_dependency(%q<pry>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
-    s.add_dependency(%q<bundler>)
+    s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<simplecov>, [">= 0"])
-    s.add_dependency(%q<pry>)
+    s.add_dependency(%q<pry>, [">= 0"])
   end
 end
 
