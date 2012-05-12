@@ -55,18 +55,24 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rspec>, [">= 2.3"])
       s.add_runtime_dependency(%q<rack-test>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_development_dependency(%q<bundler>)
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      if RUBY_VERSION < '1.9'
+        s.add_runtime_dependency(%q<pry>)
+      else
+        s.add_development_dependency(%q<pry>)
+      end
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<padrino-core>, [">= 0.10.2"])
       s.add_dependency(%q<rspec>, [">= 2.3"])
       s.add_dependency(%q<rack-test>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_dependency(%q<bundler>)
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<pry>)
     end
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
@@ -74,9 +80,10 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rspec>, [">= 2.3"])
     s.add_dependency(%q<rack-test>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+    s.add_dependency(%q<bundler>)
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<pry>)
   end
 end
 

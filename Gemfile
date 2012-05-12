@@ -7,6 +7,10 @@ gem "padrino-core", ">= 0.10.2"
 gem "rspec", ">= 2.0"
 gem "rack-test", ">= 0"
 
+platform :mri_18 do
+  gem 'pry'
+end
+
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do

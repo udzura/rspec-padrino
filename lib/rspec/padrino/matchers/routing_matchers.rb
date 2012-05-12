@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'padrino-core'
+# defining Proc#source_location
+require 'pry' if RUBY_VERSION < '1.9'
 
 module RSpec::Padrino::Matchers
   module RoutingMatchers
@@ -20,6 +22,10 @@ module RSpec::Padrino::Matchers
     end
 
     def self.hook!
+      @_routing_matchers_hook.call
+    end
+
+    def self.after_hook!
       @_routing_matchers_hook.call
     end
 
