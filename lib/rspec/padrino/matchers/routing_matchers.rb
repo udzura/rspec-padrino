@@ -15,7 +15,7 @@ module RSpec::Padrino::Matchers
         the_app.class_eval do
           after do
             last_params = params
-            last_name = request.route_obj && request.route_obj.named
+            last_name = request.route_obj && request.route_obj.name
           end
         end
       end
