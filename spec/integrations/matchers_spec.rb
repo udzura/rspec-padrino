@@ -31,6 +31,10 @@ describe "Integrations" do
       {:get => "/foo/assign?par=ams"}.should route_to(:foo, :assign, :par => "ams")
     end
 
+    it "routes to /foo/errored if it has error" do
+      {:get => "/foo/errored"}.should route_to(:foo, :errored)
+    end
+
     it "is not routeble on /" do
       {:get => "/"}.should_not be_routable
     end
@@ -53,6 +57,10 @@ describe "Integrations" do
 
     it "is routable on /foo/create with method POST" do
       {:post => "/foo/create"}.should be_routable
+    end
+
+    it "is routable on /foo/errored" do
+      {:get => "/foo/errored"}.should be_routable
     end
   end
 end

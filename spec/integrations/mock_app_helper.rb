@@ -5,6 +5,7 @@ class TestApp < Padrino::Application
   register Padrino::Rendering
   enable :sessions
   set :session_secret, "fooo"
+  set :show_exceptions, false
   disable :logging
 
   controllers :foo do
@@ -27,6 +28,10 @@ class TestApp < Padrino::Application
     get :assign do
       @assigned = 1
       "bar"
+    end
+
+    get :errored do
+      raise "Some error, but routable"
     end
   end
 end

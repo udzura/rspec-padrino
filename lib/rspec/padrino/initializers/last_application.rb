@@ -3,19 +3,25 @@ require 'rack/test'
 
 last_app = nil
 
-Sinatra::Base.class_eval do
-  undef :call
-  define_method :call do |env|
-    _dup = dup
-    last_app = _dup
-    _dup.call!(env)
+Padrino::Application.class_eval do
+  # Padrino does not override call! now in version,
+  # So I override here
+  define_method :call! do |*args|
+    ret = super(*args)
+    last_app = Thread.current['padrino.instance']
+    return ret
   end
 
   def assigns(sym)
     valname = (RUBY_VERSION > '1.9') ? :"@#{sym}" : "@#{sym}"
     instance_variables.include?(valname) ? instance_variable_get(valname) : nil
   end
+
+  def get_requested_routes_and_params
+    [ request.route_obj, params ]
+  end
 end
+
 
 Rack::MockSession.class_eval do
   alias original_request request
