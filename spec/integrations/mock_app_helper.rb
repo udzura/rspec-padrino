@@ -5,7 +5,6 @@ class TestApp < Padrino::Application
   register Padrino::Rendering
   enable :sessions
   set :session_secret, "fooo"
-  set :show_exceptions, false
   disable :logging
 
   controllers :foo do

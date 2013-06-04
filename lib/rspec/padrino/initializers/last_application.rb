@@ -7,8 +7,12 @@ Padrino::Application.class_eval do
   # Padrino does not override call! now in version,
   # So I override here
   define_method :call! do |*args|
-    ret = super(*args)
-    last_app = Thread.current['padrino.instance']
+    ret = nil
+    begin
+      ret = super(*args)
+    ensure
+      last_app = Thread.current['padrino.instance'] || self
+    end
     return ret
   end
 

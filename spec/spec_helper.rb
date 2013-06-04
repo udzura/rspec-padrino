@@ -8,5 +8,5 @@ require 'rspec-padrino'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-  # none
+  config.order = "random"
 end
