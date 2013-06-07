@@ -68,8 +68,8 @@ PLATFORMS
 DEPENDENCIES
   bundler
   jeweler (~> 1.6.4)
-  padrino-core (>= 0.10.2)
-  padrino-helpers (>= 0.10.2)
+  padrino-core (~> 0.11.0)
+  padrino-helpers (~> 0.11.0)
   pry
   rack-test
   rdoc
