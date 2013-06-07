@@ -14,6 +14,7 @@ end
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
+  gem "padrino-helpers", ">= 0.10.2"
   gem 'rdoc'
   gem "bundler"
   gem "jeweler", "~> 1.6.4"

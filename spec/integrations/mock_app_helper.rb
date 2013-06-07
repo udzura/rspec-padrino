@@ -1,8 +1,10 @@
 require 'padrino-core'
+require 'padrino-helpers'
 require 'rack/test'
 
 class TestApp < Padrino::Application
   register Padrino::Rendering
+  register Padrino::Helpers
   enable :sessions
   set :session_secret, "fooo"
   disable :logging
@@ -31,6 +33,12 @@ class TestApp < Padrino::Application
 
     get :errored do
       raise "Some error, but routable"
+    end
+  end
+
+  helpers do
+    def foo_index_path
+      url_for(:foo, :index)
     end
   end
 end

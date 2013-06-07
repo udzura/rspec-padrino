@@ -9,4 +9,5 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
   config.order = "random"
+  config.include RSpec::Padrino
 end

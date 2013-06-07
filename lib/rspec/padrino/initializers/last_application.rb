@@ -42,12 +42,6 @@ Rack::MockSession.class_eval do
   end
 end
 
-module Rack::Test::Methods
-  def last_application
-    current_session.last_application
-  end
-end
-
 class Rack::Test::Session
   def_delegator :@rack_mock_session, :last_application
 end
