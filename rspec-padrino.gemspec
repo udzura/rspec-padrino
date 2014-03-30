@@ -53,11 +53,11 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
-      s.add_runtime_dependency(%q<padrino-core>, ["~> 0.11.0"])
+      s.add_runtime_dependency(%q<padrino-core>, [">= 0.11.0"])
       s.add_runtime_dependency(%q<rspec>, [">= 2.0"])
       s.add_runtime_dependency(%q<rack-test>, [">= 0"])
       s.add_runtime_dependency(%q<pry>, [">= 0"])
-      s.add_development_dependency(%q<padrino-helpers>, ["~> 0.11.0"])
+      s.add_development_dependency(%q<padrino-helpers>, [">= 0.11.0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -65,11 +65,11 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<pry>, [">= 0"])
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
-      s.add_dependency(%q<padrino-core>, ["~> 0.11.0"])
+      s.add_dependency(%q<padrino-core>, [">= 0.11.0"])
       s.add_dependency(%q<rspec>, [">= 2.0"])
       s.add_dependency(%q<rack-test>, [">= 0"])
       s.add_dependency(%q<pry>, [">= 0"])
-      s.add_dependency(%q<padrino-helpers>, ["~> 0.11.0"])
+      s.add_dependency(%q<padrino-helpers>, [">= 0.11.0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -78,11 +78,11 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
-    s.add_dependency(%q<padrino-core>, ["~> 0.11.0"])
+    s.add_dependency(%q<padrino-core>, [">= 0.11.0"])
     s.add_dependency(%q<rspec>, [">= 2.0"])
     s.add_dependency(%q<rack-test>, [">= 0"])
     s.add_dependency(%q<pry>, [">= 0"])
-    s.add_dependency(%q<padrino-helpers>, ["~> 0.11.0"])
+    s.add_dependency(%q<padrino-helpers>, [">= 0.11.0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
