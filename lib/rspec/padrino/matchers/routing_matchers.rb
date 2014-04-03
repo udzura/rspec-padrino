@@ -25,18 +25,18 @@ module RSpec::Padrino::Matchers
         end
         last_route, last_params = *last_application.get_requested_routes_and_params
         last_name = last_route ? last_route.name : nil
-        last_name == expected_names.join("_").to_sym &&
+        last_name == expected_names.join(" ").to_sym &&
           last_params.symbolize_keys == expected_params.symbolize_keys
       end
 
       failure_message_for_should do |actual|
-        last_names = last_name.to_s.split("_").map(&:to_sym)
+        last_names = last_name.to_s.split(" ", 2).map(&:to_sym)
         last_names << last_params.symbolize_keys rescue nil
         "expected #{actual.inspect} to route to #{expected_routes.inspect}, got #{last_names.inspect}"
       end
 
       failure_message_for_should_not do |actual|
-        last_names = last_name.to_s.split("_").map(&:to_sym)
+        last_names = last_name.to_s.split(" ", 2).map(&:to_sym)
         last_names << last_params.symbolize_keys rescue nil
         "expected #{actual.inspect} not to route to #{expected.inspect}, got #{last_names.inspect}"
       end
