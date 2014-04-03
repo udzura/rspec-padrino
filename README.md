@@ -1,18 +1,18 @@
-= rspec-padrino
+# rspec-padrino
 
 rspec-padrino is a gem including helpers for testing a Padrino app using RSpec. Taking much from rspec-rails.
 
-== Install
+## Install
 
     gem install rspec-padrino
 
-Depends on padrino-core >= 0.10.2, sinatra, rack-test, and RSpec 2.
+Depends on padrino-core <~ 0.12.0, sinatra, rack-test, and RSpec 2.
 
-== Usage
+## Usage
 
 Create a Padrino project with option <tt>-t rspec</tt>. Required files will be generated.
 
-Then edit <tt>spec_helper.rb</tt> like:
+Then edit `spec_helper.rb` like:
 
     RSpec.configure do |conf|
       conf.include Rack::Test::Methods
@@ -25,16 +25,15 @@ Then edit <tt>spec_helper.rb</tt> like:
       Padrino.application
     end
 
-more usage on RDoc: [http://rubydoc.info/github/udzura/rspec-padrino/v0.0.1/frames]
+more usage on RDoc: <http://rubydoc.info/github/udzura/rspec-padrino/v0.2.0/frames>
 
-== Related Sites
+## Related Sites
 
-* {rubygems.org}[https://rubygems.org/gems/rspec-padrino]
-* {github}[https://github.com/udzura/rspec-padrino]
-* {travis-ci}[http://travis-ci.org/udzura/rspec-padrino] {<img src="https://secure.travis-ci.org/udzura/rspec-padrino.png" alt="build status" />}[http://travis-ci.org/udzura/rspec-padrino]
-* {author's blog}[http://blog.udzura.jp] # Japanese
+* [rubygems.org](https://rubygems.org/gems/rspec-padrino)
+* [github](https://github.com/udzura/rspec-padrino)
+* [![Build Status](https://travis-ci.org/udzura/rspec-padrino.svg?branch=master)](https://travis-ci.org/udzura/rspec-padrino)
 
-== Contributing to rspec-padrino
+## Contributing to rspec-padrino
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
@@ -44,8 +43,7 @@ more usage on RDoc: [http://rubydoc.info/github/udzura/rspec-padrino/v0.0.1/fram
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+## LICENSE
 
-Copyright (c) 2011 Uchio Kondo <udzura@udzura.jp>. See LICENSE.txt for
-further details.
+See LICENSE.txt for further details.
 
