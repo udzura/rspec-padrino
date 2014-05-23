@@ -63,4 +63,42 @@ describe "Integrations" do
       {:get => "/foo/errored"}.should be_routable
     end
   end
+
+  describe "redirect_to" do
+    subject { last_response }
+
+    context "with optional style" do
+      it "redirects to /baz/show" do
+        get "/baz"
+        should redirect_to(:baz, :show)
+      end
+
+      it "redirects to /baz/captures/123" do
+        get "/baz/redirect_with_captures/123"
+        should redirect_to(:baz, :captures, :id => 123)
+      end
+
+      it "should fail if does not redirect" do
+        get "/baz/captures/123"
+        should_not redirect_to(:baz, :captures, :id => 123)
+      end
+    end
+
+    context "with URI" do
+      it "redirects to /baz/show" do
+        get "/baz"
+        should redirect_to("/baz/show")
+      end
+
+      it "redirects to /baz/captures/123" do
+        get "/baz/redirect_with_captures/123"
+        should redirect_to("/baz/captures/123")
+      end
+
+      it "should fail if does not redirect" do
+        get "/baz/captures/123"
+        should_not redirect_to("/baz/captures/123")
+      end
+    end
+  end
 end
