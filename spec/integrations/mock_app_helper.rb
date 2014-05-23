@@ -36,6 +36,24 @@ class TestApp < Padrino::Application
     end
   end
 
+  controllers :baz do
+    get :index do
+      redirect url(:baz, :show)
+    end
+
+    get :show do
+      "show"
+    end
+
+    get :redirect_with_captures, :with => :id do |id|
+      redirect url(:baz, :captures, :id => id)
+    end
+
+    get :captures, :with => :id do |id|
+      "with #{id}"
+    end
+  end
+
   helpers do
     def foo_index_path
       url_for(:foo, :index)
