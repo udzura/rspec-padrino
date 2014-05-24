@@ -25,7 +25,7 @@ Then edit `spec_helper.rb` like:
       Padrino.application
     end
 
-more usage on RDoc: <http://rubydoc.info/github/udzura/rspec-padrino/v0.2.0/frames>
+more usage on RDoc: <http://rubydoc.info/github/udzura/rspec-padrino/frames>
 
 ## Related Sites
 
