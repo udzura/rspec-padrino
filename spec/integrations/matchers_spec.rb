@@ -82,6 +82,11 @@ describe "Integrations" do
         get "/baz/captures/123"
         should_not redirect_to(:baz, :captures, :id => 123)
       end
+
+      it "should not fail even if only one argument is an instance of non-string" do
+        get "/cushion", q: "/one"
+        should redirect_to(:one)
+      end
     end
 
     context "with URI" do
@@ -98,6 +103,18 @@ describe "Integrations" do
       it "should fail if does not redirect" do
         get "/baz/captures/123"
         should_not redirect_to("/baz/captures/123")
+      end
+    end
+
+    context "with absolute URI" do
+      it "redirects to http://example.com" do
+        get "/cushion", :q => "http://example.com"
+        should redirect_to("http://example.com")
+      end
+
+      it "redirects to ftp://example.com" do
+        get "/cushion", :q => "ftp://example.com"
+        should redirect_to("ftp://example.com")
       end
     end
   end
