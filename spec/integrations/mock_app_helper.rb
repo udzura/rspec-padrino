@@ -54,6 +54,12 @@ class TestApp < Padrino::Application
     end
   end
 
+  get(:one){}
+
+  get :cushion do
+    redirect params[:q]
+  end
+
   helpers do
     def foo_index_path
       url_for(:foo, :index)
