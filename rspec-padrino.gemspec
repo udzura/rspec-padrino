@@ -19,11 +19,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "sinatra", ">= 0"
-  spec.add_runtime_dependency "padrino-core", "~> 0.12.0"
+  spec.add_runtime_dependency "padrino-core", "~> 0.13.0.beta1"
   spec.add_runtime_dependency "rspec", ">= 2.0"
   spec.add_runtime_dependency "rack-test", ">= 0"
 
-  spec.add_development_dependency "padrino-helpers", "~> 0.12.0"
+  spec.add_development_dependency "padrino-helpers", "~> 0.13.0.beta1"
   spec.add_development_dependency "rdoc", ">= 0"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "simplecov", ">= 0"
