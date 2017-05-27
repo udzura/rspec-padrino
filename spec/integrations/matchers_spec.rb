@@ -20,15 +20,15 @@ describe "Integrations" do
     end
 
     it "routes to /foo/show/1" do
-      {:get => "/foo/show/1"}.should route_to(:foo, :show, :id => "1")
+      {:get => "/foo/show/1"}.should route_to(:foo, :show, "id" => "1")
     end
 
     it "routes to /custom/123/path" do
-      {:get => "/custom/123/path"}.should route_to(:foo, :show2, :id => "123")
+      {:get => "/custom/123/path"}.should route_to(:foo, :show2, "id" => "123")
     end
 
     it "routes to /foo/assign?par=ams" do
-      {:get => "/foo/assign?par=ams"}.should route_to(:foo, :assign, :par => "ams")
+      {:get => "/foo/assign?par=ams"}.should route_to(:foo, :assign, "par" => "ams")
     end
 
     it "routes to /foo/errored if it has error", pending: "Fails only in travis ci, passes locally" do

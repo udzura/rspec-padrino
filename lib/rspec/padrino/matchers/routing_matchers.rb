@@ -15,7 +15,7 @@ module RSpec::Padrino::Matchers
       match do |verb_to_path_map|
         expected_names = expected.select{|v| Symbol === v }
         expected_params = expected.select{|v| Hash === v }.first || {}
-        expected_routes = expected_names.dup.tap{|exp| exp << expected_params.symbolize_keys }
+        expected_routes = expected_names.dup.tap{|exp| exp << expected_params }
         path = verb_to_path_map.values.first
         method = verb_to_path_map.keys.first
         begin
@@ -26,18 +26,18 @@ module RSpec::Padrino::Matchers
         last_route, last_params = *last_application.get_requested_routes_and_params
         last_name = last_route ? last_route.name : nil
         last_name == expected_names.join(" ").to_sym &&
-          last_params.symbolize_keys == expected_params.symbolize_keys
+          last_params == expected_params
       end
 
       failure_message_for_should do |actual|
         last_names = last_name.to_s.split(" ", 2).map(&:to_sym)
-        last_names << last_params.symbolize_keys rescue nil
+        last_names << last_params
         "expected #{actual.inspect} to route to #{expected_routes.inspect}, got #{last_names.inspect}"
       end
 
       failure_message_for_should_not do |actual|
         last_names = last_name.to_s.split(" ", 2).map(&:to_sym)
-        last_names << last_params.symbolize_keys rescue nil
+        last_names << last_params
         "expected #{actual.inspect} not to route to #{expected.inspect}, got #{last_names.inspect}"
       end
     end
