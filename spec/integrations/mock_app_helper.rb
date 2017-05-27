@@ -14,7 +14,7 @@ class TestApp < Padrino::Application
       "foo"
     end
 
-    get :show, :with => :id do
+    get :show, with: :id do
       "foo"
     end
 
@@ -45,11 +45,11 @@ class TestApp < Padrino::Application
       "show"
     end
 
-    get :redirect_with_captures, :with => :id do |id|
-      redirect url(:baz, :captures, :id => id)
+    get :redirect_with_captures, with: :id do |id|
+      redirect url(:baz, :captures, id: id)
     end
 
-    get :captures, :with => :id do |id|
+    get :captures, with: :id do |id|
       "with #{id}"
     end
   end

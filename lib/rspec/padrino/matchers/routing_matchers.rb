@@ -51,7 +51,7 @@ module RSpec::Padrino::Matchers
         path = verb_to_path_map.values.first
         method = verb_to_path_map.keys.first.to_s.upcase
         @routed_to = Padrino.mounted_apps.map(&:app_obj).
-          map{|a| a.router.recognize(Rack::MockRequest.env_for(path, :method => method))}.first
+          map{|a| a.router.recognize(Rack::MockRequest.env_for(path, method: method))}.first
         @routed_to.first
       end
 
