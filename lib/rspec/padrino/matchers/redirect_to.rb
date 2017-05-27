@@ -19,11 +19,11 @@ module RSpec::Padrino::Matchers
         end
       end
 
-      failure_message_for_should do |actual|
+      failure_message do |actual|
         "expected #{actual} to be a redirect to #{@expected_url}, got #{@actual_url.inspect}"
       end
 
-      failure_message_for_should_not do |actual|
+      failure_message_when_negated do |actual|
         "expected #{actual} not to be a redirect to #{@expected_url}, got #{@actual_url.inspect}"
       end
     end

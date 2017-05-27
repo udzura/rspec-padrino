@@ -29,13 +29,13 @@ module RSpec::Padrino::Matchers
           last_params == expected_params
       end
 
-      failure_message_for_should do |actual|
+      failure_message do |actual|
         last_names = last_name.to_s.split(" ", 2).map(&:to_sym)
         last_names << last_params
         "expected #{actual.inspect} to route to #{expected_routes.inspect}, got #{last_names.inspect}"
       end
 
-      failure_message_for_should_not do |actual|
+      failure_message_when_negated do |actual|
         last_names = last_name.to_s.split(" ", 2).map(&:to_sym)
         last_names << last_params
         "expected #{actual.inspect} not to route to #{expected.inspect}, got #{last_names.inspect}"
@@ -55,7 +55,7 @@ module RSpec::Padrino::Matchers
         @routed_to.first
       end
 
-      failure_message_for_should_not do |path|
+      failure_message_when_negated do |path|
         "expected #{path.inspect} not to be routable, but it routes to #{@routed_to.inspect}"
       end
     end

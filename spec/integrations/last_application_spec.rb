@@ -7,18 +7,18 @@ describe "Integrations" do
     
     it "exists" do
       get "/foo"
-      should_not be_nil
+      is_expected.not_to be_nil
     end
 
     it "is an instance of PadrinoApp" do
       get "/foo"
-      should be_kind_of(TestApp)
+      is_expected.to be_kind_of(TestApp)
     end
 
     it "exists with assignment" do
       get "/foo/assign"
-      last_application.assigns(:nonexist).should be_nil
-      last_application.assigns(:assigned).should eq(1)
+      expect(last_application.assigns(:nonexist)).to be_nil
+      expect(last_application.assigns(:assigned)).to eq(1)
     end
   end
 end
